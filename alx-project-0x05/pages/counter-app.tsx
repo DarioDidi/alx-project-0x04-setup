@@ -6,8 +6,8 @@ const CounterApp: React.FC = () => {
   // const increment = () => { setCount(count + 1); };
   // const decrement = () => { setCount(count > 0 ? count - 1 : 0); };
 
-  const counter = useContext(CountContext);
-  const count = counter ? counter.count : 0;
+  const counter = useCount();
+  const count = counter.count;
 
 
   return (
@@ -26,12 +26,12 @@ const CounterApp: React.FC = () => {
       {/*Buttons*/}
       <div className="flex space-x-4">
         <button
-          onClick={counter?.increment}
+          onClick={counter.increment}
           className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-full text-lg transition  duration-300 shadow-lg transform hover:scale-104">
           Increment
         </button>
         <button
-          onClick={counter?.decrement}
+          onClick={counter.decrement}
           className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full text-lg transition  duration-300 shadow-lg transform hover:scale-104">
           Decrement
         </button>
