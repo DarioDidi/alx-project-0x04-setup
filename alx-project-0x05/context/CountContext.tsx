@@ -12,7 +12,6 @@ export const CountProvider = ({ children }: { children: ReactNode }) => {
 	const [count, setCount] = useState<number>(0);
 	const increment = () => setCount((count: number) => count + 1)
 	const decrement = () => setCount((count: number) => count > 0 ? count - 1 : 0)
-	console.log("in count provider");
 	return (
 		<CountContext.Provider value={{ count, increment, decrement }}>
 			{children}
@@ -25,6 +24,5 @@ export const useCount = () => {
 	if (!context) {
 		throw new Error("useCount must be withing a designated countprovider");
 	}
-	console.log("in useCount", context);
 	return context;
 }
